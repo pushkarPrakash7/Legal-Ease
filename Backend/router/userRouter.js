@@ -1,0 +1,14 @@
+import express from "express";
+const router = express.Router();
+import { clientRegister, login, addNewAdmin, getAllLawyers, getUserDetails, logoutAdmin, logoutClient, addnewLawyer } from "../controller/userController.js";
+import {isAdminAuthenticated, isClientAuthenticated} from "../middlewares/Auth.js";
+router.post('/client/register', clientRegister);
+router.post('/login',login);
+router.post('/admin/addnew',isAdminAuthenticated, addNewAdmin);
+router.get('/lawyers', getAllLawyers);
+router.get('/admin/me',isAdminAuthenticated,getUserDetails);
+router.get('/client/me',isClientAuthenticated,getUserDetails);
+router.get('/admin/logout',isAdminAuthenticated, logoutAdmin);
+router.get('/client/logout',isClientAuthenticated,logoutClient); 
+router.post('/lawyer/addnew',isAdminAuthenticated, addnewLawyer);
+export default router;
