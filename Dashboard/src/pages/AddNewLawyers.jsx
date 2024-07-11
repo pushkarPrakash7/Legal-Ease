@@ -1,14 +1,11 @@
-import { useContext, useState } from "react";
-import { Context } from "../main";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import logoImage from "../assets/LogoDark.png";
 import axios from "axios";
 import ProfilePreview from "../assets/Profile.webp";
 
 function AddNewLawyers() {
-    const { isAuthenticated } = useContext(Context);
-
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
