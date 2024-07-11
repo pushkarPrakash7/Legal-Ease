@@ -28,7 +28,7 @@ function SidebarComponent() {
         }
       };
     return (
-        <div className={` ${isAuthenticated ? "hidden" : "flex"}`} >
+        <div className={` ${!isAuthenticated ? "hidden" : "flex"} bg-gray-200`} >
             <button
                 data-drawer-target="logo-sidebar"
                 data-drawer-toggle="logo-sidebar"
@@ -108,7 +108,7 @@ function SidebarComponent() {
                         <li>
                             <a href="/admin/addnew" className="flex items-center p-2 text-gray-100  rounded-lg dark:text-white hover:bg-gray-100 hover:text-black dark:hover:bg-gray-700 group">
                                 <RiAdminFill className="text-2xl" />
-                                <span className="flex-1 ms-3 whitespace-nowrap">Add New Lawyer</span>
+                                <span className="flex-1 ms-3 whitespace-nowrap">Add New Admin</span>
                             </a>
                         </li>
                         <li>

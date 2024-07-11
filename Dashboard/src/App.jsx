@@ -11,37 +11,37 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useContext, useEffect } from 'react';
 import { Context } from './main.jsx';
 import axios from 'axios';
-function App() {
 
-  const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
+function App() {
+  const { isAuthenticated, setIsAuthenticated, admin, setAdmin } = useContext(Context);
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const response = await axios.get("http://localhost:4000/api/v1/user/admin/me", { withCredentials: true });
         setIsAuthenticated(true);
-        setUser(response.data.user);
-      }
-      catch (error) {
+        setAdmin(response.data.user);
+      } catch (error) {
         setIsAuthenticated(false);
-        setUser({});
+        setAdmin({});
       }
     };
     fetchUser();
-  }, [isAuthenticated, setIsAuthenticated, setUser]);
+  }, [isAuthenticated]);
+
   return (
     <BrowserRouter>
-      <SidebarComponent />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/lawyer/addnew" element={<AddNewLawyers />} />
-        <Route path="/admin/addnew" element={<AddNewAdmin />} />
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/lawyers" element={<Lawyers />} />
-      </Routes>
+        <SidebarComponent />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/lawyer/addnew" element={<AddNewLawyers />} />
+          <Route path="/admin/addnew" element={<AddNewAdmin />} />
+          <Route path="/messages" element={<Messages />} />
+          <Route path="/lawyers" element={<Lawyers />} />
+        </Routes>
       <ToastContainer position='top-center' autoClose={3000} />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

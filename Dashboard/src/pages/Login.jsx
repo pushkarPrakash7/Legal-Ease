@@ -3,7 +3,8 @@ import { Context } from "../main";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Navigate, useNavigate } from "react-router-dom";
-import LogoImage from "../assets/Logo.png";
+import LogoImage from "../assets/LogoDark.png";
+
 function Login() {
     const { isAuthenticated, setIsAuthenticated } = useContext(Context);
     const [email, setEmail] = useState("");
@@ -22,24 +23,22 @@ function Login() {
             toast.success(response.data.message);
             navigateTo("/");
             setIsAuthenticated(true);
-        }
-        catch (error) {
+        } catch (error) {
             toast.error(error.response.data.message);
         }
-    }
+    };
 
     if (isAuthenticated) {
-        return <Navigate to={"/"} />
+        return <Navigate to={"/"} />;
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-200 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen flex flex-grow items-center justify-center bg-gray-200 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-md w-full space-y-8">
-                <img className="h-16 w-16" src={LogoImage} />
-                <h1>Welcome to LegalEase</h1>
-                <p>Only Admins are allowed to access this resources</p>
+                <img className="h-24 w-24 mx-auto" src={LogoImage} alt="Logo" />
+                <h1 className="text-center text-2xl font-bold">Welcome to LegalEase</h1>
+                <p className="text-center">Only Admins are allowed to access this resource</p>
                 <form className="mt-8 space-y-6" onSubmit={handleLogin}>
-                    <input type="hidden" name="remember" value="true" />
                     <div className="rounded-md shadow-sm space-y-4">
                         <div>
                             <label htmlFor="email-address" className="sr-only">Email address</label>
@@ -83,11 +82,10 @@ function Login() {
                             />
                         </div>
                     </div>
-
                     <div>
                         <button
                             type="submit"
-                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-background focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md bg-[#fcbc44] text-gray-500 hover:bg-[#f9bd61] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                             Sign in
                         </button>
@@ -95,7 +93,7 @@ function Login() {
                 </form>
             </div>
         </div>
-    )
+    );
 }
 
-export default Login
+export default Login;
