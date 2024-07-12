@@ -94,7 +94,7 @@ function SidebarComponent() {
                                 <svg className="flex-shrink-0 w-5 h-5 text-gray-100  transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M8.5 1a7.5 7.5 0 0 0-.67 14.966c-.004.285-.016.696-.091 1.024-.08.346-.2.652-.348.928H5.89c-1.068 0-1.938-.633-2.38-1.55-.458-.95-.594-2.198-.594-3.368v-.585c0-.407.108-.765.295-1.056.196-.303.495-.56.871-.746a1 1 0 0 0 .479-.514C4.924 9.854 5 9.522 5 9c0-.713.193-1.315.553-1.79C5.877 6.764 6.427 6.5 7 6.5h6c.573 0 1.123.264 1.447.71.36.475.553 1.077.553 1.79 0 .522.076.854.349 1.128a1 1 0 0 0 .48.514c.376.186.675.443.871.746.187.291.295.65.295 1.056v.585c0 1.17-.136 2.417-.594 3.368-.442.917-1.312 1.55-2.38 1.55h-1.5c-.148-.276-.268-.582-.348-.928-.075-.328-.087-.739-.091-1.024A7.5 7.5 0 0 0 8.5 1Z" />
                                 </svg>
-                                <span className="flex-1 ms-3 whitespace-nowrap">Users</span>
+                                <span className="flex-1 ms-3 whitespace-nowrap">Lawyers</span>
                             </a>
                         </li>
                         <li>

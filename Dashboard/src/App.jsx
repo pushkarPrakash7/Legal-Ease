@@ -13,16 +13,16 @@ import { Context } from './main.jsx';
 import axios from 'axios';
 
 function App() {
-  const { isAuthenticated, setIsAuthenticated, admin, setAdmin } = useContext(Context);
+  const { isAuthenticated, setIsAuthenticated, user, setUser } = useContext(Context);
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const response = await axios.get("http://localhost:4000/api/v1/user/admin/me", { withCredentials: true });
         setIsAuthenticated(true);
-        setAdmin(response.data.user);
+        setUser(response.data.users);
       } catch (error) {
         setIsAuthenticated(false);
-        setAdmin({});
+        setUser({});
       }
     };
     fetchUser();
